@@ -1,0 +1,10 @@
+# Ignore .env file
+*.env
+azuresecretrotator.private_key.pem
+localenv.sh
+dev.tfvars
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+azuresecretrotator.private-key.pem

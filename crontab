@@ -1,0 +1,1 @@
+*/5 * * * *  /run_rotator.sh >> /var/log/azure-secret-rotator.log 2>&1
