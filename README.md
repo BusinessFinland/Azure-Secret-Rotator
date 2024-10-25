@@ -2,6 +2,10 @@
 
 The Azure Secret Rotation application provides an automated solution for managing and rotating secrets associated with Azure App Registrations. The application interfaces with various services such as Microsoft Graph API, Azure Key Vault, Azure Table Storage, and integrates with GitHub for updating repository secrets.
 
+## Optional Functionality
+
+If you are managing authentication from Github to Azure through federated credentials, you don't have to add Github private key to your container. 
+
 ## Overview of Services
 
 - **Microsoft Graph API**: Used for retrieving and updating App Registration details.
@@ -72,7 +76,7 @@ graph TD;
   InitializeGitHubClient --> GetEntities[Get Entities from Azure Table Storage]
   GetEntities --> IterateEntities[Iterate over each entity]
   IterateEntities --> CheckExpiration[Check Expiration of Credentials]
-  CheckExpiration --> |Credentials Expiring In Two Weeks|CreateNewSecret[Create New Secret]
+  CheckExpiration --> |Credentials Expiring In 30 Days|CreateNewSecret[Create New Secret]
   CheckExpiration --> |Not expiring|BreakLoop[Break Loop]
   CreateNewSecret --> UploadToKeyVault
   CheckExpiration --> |Two secrets,  One Has Expired Or Is Expiring In Day|DeleteSecret[Delete Secret]
