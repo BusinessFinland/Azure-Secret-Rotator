@@ -5,6 +5,7 @@ The Azure Secret Rotation application provides an automated solution for managin
 ## Optional Functionality
 
 If you are managing authentication from Github to Azure through federated credentials, you don't have to add Github private key to your container. 
+azuresecretrotator.private-key.pem, see github.go for more details.
 
 ## Overview of Services
 
